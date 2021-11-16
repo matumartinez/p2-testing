@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hours</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hourinterval</th>
+      <th>Room</th>
+      <th>Id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hours.each do |hour| %>
+      <tr>
+        <td><%=link_to hour.hourinterval, hour%></td>
+        <td><%= hour.room_id %></td>
+        <td><%= hour.id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

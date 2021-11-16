@@ -1,0 +1,35 @@
+.roomrow {
+    display: flex;
+    flex-direction: row;
+    margin: 50px;
+}
+
+.room {
+    padding: 50px 50px;
+    background-color: lightblue;
+    text-align: center;
+    font-size: large;
+    text-decoration: none;
+}
+
+.shop {
+    padding: 50px 50px;
+    background-color: lightcoral;
+    text-align: center;
+    font-size: large;
+}
+
+.entrance {
+    padding: 50px 50px;
+    background-color: white;
+    text-align: center;
+    font-size: large;
+}
+
+.bathroom {
+    padding: 100px 50px;
+    background-color: lightsalmon;
+    text-align: center;
+    font-size: large;
+    writing-mode: vertical-lr;
+}

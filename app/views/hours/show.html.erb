@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Seats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Room</th>
+      <th>Hour</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @seats.each do |seat| %>
+      <tr>
+        <% if seat.occupied == "NO" %>
+          <td style="background-color: lightblue;"><%= link_to seat.number, { :controller => :hours, :action => :change_color, :seat_id => seat.id} %></td>
+        <% else %> 
+          <td style="background-color: red;"><%= link_to seat.number, { :controller => :hours, :action => :change_color, :seat_id => seat.id} %></td>
+        <% end %>
+        <td><%= seat.room_id %></td>
+        <td><%= seat.hour_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
