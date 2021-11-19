@@ -1,28 +1,47 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Seats</h1>
-
+<div style="display: flex;">
+<div class="corridor"> <b>Corridor</b> </div>
+<div style="display: flex; flex-direction: column">
 <table>
   <thead>
     <tr>
-      <th>Number</th>
-      <th>Room</th>
-      <th>Hour</th>
-      <th colspan="3"></th>
+      <th colspan="14"></th>
     </tr>
   </thead>
 
+  <% list_seats_sorted = sort_list(@seats) %>
+  <% letters = ['A', 'B', 'C', 'D'] %>
+  <% counter = 0 %>
+
   <tbody>
-    <% @seats.each do |seat| %>
+    <% (1..48).step(12) do |n| %>
       <tr>
+      <td> <%= letters[counter] %> </td>
+      <% (n..n+11).step(1) do |i| %>
+        <% seat = list_seats_sorted[i-1]%>
         <% if seat.occupied == "NO" %>
           <td style="background-color: lightblue;"><%= link_to seat.number, { :controller => :hours, :action => :change_color, :seat_id => seat.id} %></td>
         <% else %> 
           <td style="background-color: red;"><%= link_to seat.number, { :controller => :hours, :action => :change_color, :seat_id => seat.id} %></td>
         <% end %>
-        <td><%= seat.room_id %></td>
-        <td><%= seat.hour_id %></td>
+
+      <% end %>
+      <td>  </td>
+      <% counter = counter+1 %> 
+      </tr>
+      <tr>
+        <td colspan="13"></td>
       </tr>
     <% end %>
+
   </tbody>
+
 </table>
+<div class="screen">
+Screen
+</div>
+</div>
+<div class="corridor"> <b>Corridor</b> </div>
+</div>
