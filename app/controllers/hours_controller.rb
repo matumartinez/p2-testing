@@ -1,5 +1,6 @@
 class HoursController < ApplicationController
   before_action :set_hour, only: %i[ show edit update destroy ]
+  helper_method :sort_list
 
   # GET /hours or /hours.json
   def index
@@ -69,8 +70,23 @@ class HoursController < ApplicationController
     else
       @seat.occupied = "NO"
     end
-    @seat.save
+    @seat.update(:number => @seat.number, :room_id => @seat.room_id, :hour_id => @seat.hour_id) 
     redirect_back(fallback_location: root_path)
+  end
+
+
+  def sort_list(list_to_sort)
+    list_id_seats = []
+    list_to_sort.each do |seat|
+      list_id_seats.push(seat.id)
+    end
+    list_id_seats_sorted = list_id_seats.sort
+    list_seats_sorted = []
+    list_id_seats_sorted.each do |id_seat|
+      seat = Seat.find_by(id: id_seat)
+      list_seats_sorted.push(seat)
+    end
+    return list_seats_sorted
   end
 
   private
