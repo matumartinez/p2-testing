@@ -46,90 +46,106 @@ room8.hours.create(hourinterval: 'Tarde 19:00 - 21:00', id: 23)
 room8.hours.create(hourinterval: 'Noche 21:00 - 23:00', id: 24)
 
 #Creación de asientos por sala
-48.times do |i|
-    hour = Hour.find_by(id: 1)
-    hour.seats.create(number: i+1.to_s, room_id: 1, occupied: "NO")
+4.times do |j|
+    12.times do |i|
+        hour = Hour.find_by(id: 1)
+        hour.seats.create(number: (i+1).to_s, room_id: 1, occupied: "NO")
 
-    hour = Hour.find_by(id: 2)
-    hour.seats.create(number: i+1.to_s, room_id: 1, occupied: "NO")
+        hour = Hour.find_by(id: 2)
+        hour.seats.create(number: (i+1).to_s, room_id: 1, occupied: "NO")
 
-    hour = Hour.find_by(id: 3)
-    hour.seats.create(number: i+1.to_s, room_id: 1, occupied: "NO")
+        hour = Hour.find_by(id: 3)
+        hour.seats.create(number: (i+1).to_s, room_id: 1, occupied: "NO")
+    end
 end
 
-48.times do |i|
-    hour = Hour.find_by(id: 4)
-    hour.seats.create(number: i+1.to_s, room_id: 2, occupied: "NO")
+4.times do |j|
+    12.times do |i|
+        hour = Hour.find_by(id: 4)
+        hour.seats.create(number: (i+1).to_s, room_id: 2, occupied: "NO")
 
-    hour = Hour.find_by(id: 5)
-    hour.seats.create(number: i+1.to_s, room_id: 2, occupied: "NO")
+        hour = Hour.find_by(id: 5)
+        hour.seats.create(number: (i+1).to_s, room_id: 2, occupied: "NO")
 
-    hour = Hour.find_by(id: 6)
-    hour.seats.create(number: i+1.to_s, room_id: 2, occupied: "NO")
+        hour = Hour.find_by(id: 6)
+        hour.seats.create(number: (i+1).to_s, room_id: 2, occupied: "NO")
+    end
 end
 
-48.times do |i|
-    hour = Hour.find_by(id: 7)
-    hour.seats.create(number: i+1.to_s, room_id: 3, occupied: "NO")
+4.times do |j|
+    12.times do |i|
+        hour = Hour.find_by(id: 7)
+        hour.seats.create(number: (i+1).to_s, room_id: 3, occupied: "NO")
 
-    hour = Hour.find_by(id: 8)
-    hour.seats.create(number: i+1.to_s, room_id: 3, occupied: "NO")
+        hour = Hour.find_by(id: 8)
+        hour.seats.create(number: (i+1).to_s, room_id: 3, occupied: "NO")
 
-    hour = Hour.find_by(id: 9)
-    hour.seats.create(number: i+1.to_s, room_id: 3, occupied: "NO")
+        hour = Hour.find_by(id: 9)
+        hour.seats.create(number: (i+1).to_s, room_id: 3, occupied: "NO")
+    end
 end
 
-48.times do |i|
-    hour = Hour.find_by(id: 10)
-    hour.seats.create(number: i+1.to_s, room_id: 4, occupied: "NO")
+4.times do |j|
+    12.times do |i|
+        hour = Hour.find_by(id: 10)
+        hour.seats.create(number: (i+1).to_s, room_id: 4, occupied: "NO")
 
-    hour = Hour.find_by(id: 11)
-    hour.seats.create(number: i+1.to_s, room_id: 4, occupied: "NO")
+        hour = Hour.find_by(id: 11)
+        hour.seats.create(number: (i+1).to_s, room_id: 4, occupied: "NO")
 
-    hour = Hour.find_by(id: 12)
-    hour.seats.create(number: i+1.to_s, room_id: 4, occupied: "NO")
+        hour = Hour.find_by(id: 12)
+        hour.seats.create(number: (i+1).to_s, room_id: 4, occupied: "NO")
+    end
 end
 
-48.times do |i|
-    hour = Hour.find_by(id: 13)
-    hour.seats.create(number: i+1.to_s, room_id: 5, occupied: "NO")
+4.times do |j|
+    12.times do |i|
+        hour = Hour.find_by(id: 13)
+        hour.seats.create(number: (i+1).to_s, room_id: 5, occupied: "NO")
 
-    hour = Hour.find_by(id: 14)
-    hour.seats.create(number: i+1.to_s, room_id: 5, occupied: "NO")
+        hour = Hour.find_by(id: 14)
+        hour.seats.create(number: (i+1).to_s, room_id: 5, occupied: "NO")
 
-    hour = Hour.find_by(id: 15)
-    hour.seats.create(number: i+1.to_s, room_id: 5, occupied: "NO")
+        hour = Hour.find_by(id: 15)
+        hour.seats.create(number: (i+1).to_s, room_id: 5, occupied: "NO")
+    end
 end
 
-48.times do |i|
-    hour = Hour.find_by(id: 16)
-    hour.seats.create(number: i+1.to_s, room_id: 6, occupied: "NO")
+4.times do |j|
+    12.times do |i|
+        hour = Hour.find_by(id: 16)
+        hour.seats.create(number: (i+1).to_s, room_id: 6, occupied: "NO")
 
-    hour = Hour.find_by(id: 17)
-    hour.seats.create(number: i+1.to_s, room_id: 6, occupied: "NO")
+        hour = Hour.find_by(id: 17)
+        hour.seats.create(number: (i+1).to_s, room_id: 6, occupied: "NO")
 
-    hour = Hour.find_by(id: 18)
-    hour.seats.create(number: i+1.to_s, room_id: 6, occupied: "NO")
+        hour = Hour.find_by(id: 18)
+        hour.seats.create(number: (i+1).to_s, room_id: 6, occupied: "NO")
+    end
 end
 
-48.times do |i|
-    hour = Hour.find_by(id: 19)
-    hour.seats.create(number: i+1.to_s, room_id: 7, occupied: "NO")
+4.times do |j|
+    12.times do |i|
+        hour = Hour.find_by(id: 19)
+        hour.seats.create(number: (i+1).to_s, room_id: 7, occupied: "NO")
 
-    hour = Hour.find_by(id: 20)
-    hour.seats.create(number: i+1.to_s, room_id: 7, occupied: "NO")
+        hour = Hour.find_by(id: 20)
+        hour.seats.create(number: (i+1).to_s, room_id: 7, occupied: "NO")
 
-    hour = Hour.find_by(id: 21)
-    hour.seats.create(number: i+1.to_s, room_id: 7, occupied: "NO")
+        hour = Hour.find_by(id: 21)
+        hour.seats.create(number: (i+1).to_s, room_id: 7, occupied: "NO")
+    end
 end
 
-48.times do |i|
-    hour = Hour.find_by(id: 22)
-    hour.seats.create(number: i+1.to_s, room_id: 8, occupied: "NO")
+4.times do |j|
+    12.times do |i|
+        hour = Hour.find_by(id: 22)
+        hour.seats.create(number: (i+1).to_s, room_id: 8, occupied: "NO")
 
-    hour = Hour.find_by(id: 23)
-    hour.seats.create(number: i+1.to_s, room_id: 8, occupied: "NO")
+        hour = Hour.find_by(id: 23)
+        hour.seats.create(number: (i+1).to_s, room_id: 8, occupied: "NO")
 
-    hour = Hour.find_by(id: 24)
-    hour.seats.create(number: i+1.to_s, room_id: 8, occupied: "NO")
+        hour = Hour.find_by(id: 24)
+        hour.seats.create(number: (i+1).to_s, room_id: 8, occupied: "NO")
+    end
 end
