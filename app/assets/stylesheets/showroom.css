@@ -13,7 +13,7 @@
 }
 
 .shop {
-    padding: 50px 50px;
+    padding: 50px 70px;
     background-color: lightcoral;
     text-align: center;
     font-size: large;
@@ -36,7 +36,7 @@
 
 .corridor {
     padding: 100px 50px;
-    background-color: rgb(73, 95, 136);
+    background-color: rgb(80, 216, 216);
     text-align: center;
     font-size: large;
     writing-mode: vertical-lr;
@@ -48,8 +48,65 @@
     margin-left: 30px;
     margin-right: 30px;
     height: 10px;
-    background-color:rgb(85, 189, 199);
+    color: white;
+    background-color:rgb(47, 114, 134);
     text-align: center;
     font-size: large;
     text-decoration: none;
+}
+
+.image {
+    width: 200px;
+    height: 230px;
+    text-align: center;
+}
+
+.title_movie {
+    text-align: center;
+}
+
+.movies_in_room {
+    border:solid 1px; 
+    width: 200px; 
+    padding: 10px; 
+    text-align: center; 
+    margin: 5px;
+}
+
+.structure_of_movies_in_room {
+    display: flex; 
+    flex-flow: row wrap;
+}
+
+.movies_in_index_of_movies{
+    border: solid 1px; 
+    width: 200px; 
+    padding: 10px; 
+    text-align: center; 
+    margin: 5px;
+}
+
+.structure_of_index_of_movies {
+    display: flex; 
+    flex-flow: row wrap;
+}
+
+.if_not_occupied {
+    background-color: lightblue;
+}
+
+.if_occupied {
+    background-color: red;
+}
+
+.blocks_of_columns {
+    display: flex;
+}
+
+.block_column {
+    display: flex; flex-direction: column
+}
+
+.link_to_hour_object {
+    text-align: left;
 }
