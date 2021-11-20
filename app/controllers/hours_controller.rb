@@ -8,6 +8,13 @@ class HoursController < ApplicationController
     @room = @hour.room
     @hours = @room.hours
     @hours
+    @movies = []
+    @hours.each do |hour|
+      if hour.room_id == @room.id
+        movie = Movie.find_by(id: hour.movie_id)
+        @movies.push(movie)
+      end
+    end
   end
 
   # GET /hours/1 or /hours/1.json
@@ -15,6 +22,11 @@ class HoursController < ApplicationController
     @hour = Hour.find_by(id: params[:id])
     @seats = @hour.seats
     @seats
+    id_movie = @hour.movie_id
+    @movie = Movie.find_by(id: id_movie)
+    @movie
+    id_room = @hour.room_id
+    @room = Room.find_by(id: id_room)
   end
 
   # GET /hours/new

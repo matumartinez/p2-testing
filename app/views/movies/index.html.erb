@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movies</h1>
+
+<div class = "structure_of_index_of_movies">
+<% @movies.each do |movie| %>
+  <div class="movies_in_index_of_movies">
+  <img src='<%=movie.image%>' class="image">
+  <h2 class="title_movie"><%=movie.title%> </h2>
+  <% string_hours = [] %>
+  <% list_hours_room = [] %>
+  <% movie.hours.each do |hour| %>
+  <% list_hours_room.push([hour.hourinterval, hour.room_id, hour.id])%>
+  <% string_hours.push(hour.hourinterval) %>
+  <% end %>
+  <% set_string_hours = string_hours.to_set %>
+  <% list_string_hours = set_string_hours.to_a %>
+  <% list_string_hours.each do |hour_interval| %>
+    <h4><%=hour_interval%> </h4>
+    <% list_hours_room.each do |hour_room| %>
+      <% if hour_room[0] == hour_interval %>
+        <% string = "Room #{hour_room[1]}" %>
+        <% hour_object = Hour.find_by(id: hour_room[2]) %>
+        <p class="link_to_hour_object"> <%= link_to string, hour_object %> </p>
+      <% end %>
+    <% end %>
+  <% end %>
+  </div>
+<% end %>
+</div>
+
+
+
+

@@ -1,24 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Hours</h1>
+<h1>Movies in room <%= @room.id %></h1>
+<div class="structure_of_movies_in_room">
+<% @movies.each do |movie| %>
+  <div class="movies_in_room">
+    <% hour = Hour.find_by(movie_id: movie.id) %>
+    <h2 class="title_movie"><%=hour.hourinterval%> </h2>
+    <img src='<%=movie.image%>' class="image">
+    <h3 class="title_movie"> <%= link_to movie.title, hour %> </h3>
+  </div>
+<% end %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Hourinterval</th>
-      <th>Room</th>
-      <th>Id hour</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @hours.each do |hour| %>
-      <tr>
-        <td><%=link_to hour.hourinterval, hour%></td>
-        <td><%= hour.room_id %></td>
-        <td><%= hour.id %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
