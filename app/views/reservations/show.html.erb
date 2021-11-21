@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Seats:</strong>
+  <%= @reservation.seats %>
+</p>
+
+<p>
+  <strong>Row:</strong>
+  <%= @reservation.row %>
+</p>
+
+<p>
+  <strong>Hour:</strong>
+  <%= @reservation.hour_id %>
+</p>
+
+<p>
+  <strong>Movie:</strong>
+  <%= @reservation.movie_id %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @reservation.room_id %>
+</p>
+
+<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+<%= link_to 'Back', reservations_path %>

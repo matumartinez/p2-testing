@@ -1,0 +1,58 @@
+<%= form_with(model: reservation, local: true) do |form| %>
+  <% if reservation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+
+      <ul>
+      <% reservation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <label for="row">Choose a row:</label>
+    <select name="row" id="row">
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <%= form.label :seats %>
+    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Seat 1 </label>
+    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Seat 2 </label>
+    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Seat 3 </label>
+    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Seat 4 </label>
+    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Seat 5 </label>
+    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Seat 6 </label>
+    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Seat 7 </label>
+    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Seat 8 </label>
+    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Seat 9 </label>
+    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Seat 10 </label>
+    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Seat 11 </label>
+    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Seat 12 </label>
+  </div>
+
+  <div class="field">
+    <%= form.label :hour_id %>
+    <%= form.number_field :hour_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :movie_id %>
+    <%= form.number_field :movie_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :room_id %>
+    <%= form.number_field :room_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

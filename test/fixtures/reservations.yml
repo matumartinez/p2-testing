@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  seats: 
+  row: MyString
+  hour_id: 1
+  movie_id: 1
+  room_id: 1
+
+two:
+  seats: 
+  row: MyString
+  hour_id: 1
+  movie_id: 1
+  room_id: 1

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reservations
   resources :movies
   get "change_color", action: :change_color, controller: 'hours'
   resources :hours
