@@ -15,10 +15,6 @@ class ReservationsController < ApplicationController
   def new
     @reservation = Reservation.new
     @hour = Hour.find_by(id: params[:hour_id])
-    puts 'AQUI VIENE'
-    @id = params[:hour_id]
-    @tipo = @id.class
-    puts "#{@tipo}"
     @seats = @hour.seats
     @seats
     id_movie = @hour.movie_id
@@ -34,6 +30,9 @@ class ReservationsController < ApplicationController
 
   # POST /reservations or /reservations.json
   def create
+    @hour_id = params.require(:reservation).permit(:hour_id)["hour_id"]
+    @hour = Hour.find_by(id: @hour_id)
+
     @available_seats = [params.require(:reservation).permit(:seat_1)["seat_1"], params.require(:reservation).permit(:seat_2)["seat_2"], params.require(:reservation).permit(:seat_3)["seat_3"],
                         params.require(:reservation).permit(:seat_4)["seat_4"], params.require(:reservation).permit(:seat_5)["seat_5"], params.require(:reservation).permit(:seat_6)["seat_6"],
                         params.require(:reservation).permit(:seat_7)["seat_7"], params.require(:reservation).permit(:seat_8)["seat_8"], params.require(:reservation).permit(:seat_9)["seat_9"],
@@ -48,15 +47,14 @@ class ReservationsController < ApplicationController
     counter = 0
 
     @row_value[@row].each do |position|
-      puts "AQUI VIENE EL VALOR DE available seat"
-      puts "#{@available_seats[counter]}"
       @seat = Seat.find_by(id: @seats[position])
       if @available_seats[counter] == "1"
-        puts "AQUI VA EL SEAT"
-        puts "#{@seat.occupied}"
-        @seat.occupied = "YES"
-        puts "#{@seat.occupied}"
-        puts @seat.id
+        if @seat.occupied == "YES"
+          redirect_back(fallback_location: root_path, notice: "Some seats aren't available.")
+          return
+        else
+          @seat.occupied = "YES"
+        end
       end
       @seat.update(:number => @seat.number, :room_id => @seat.room_id, :hour_id => @seat.hour_id)
       counter += 1
