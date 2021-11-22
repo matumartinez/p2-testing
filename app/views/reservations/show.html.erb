@@ -25,5 +25,6 @@
   <%= @reservation.room_id %>
 </p>
 
-<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
-<%= link_to 'Back', reservations_path %>
+<%= link_to 'Edit', edit_reservation_path(@reservation) %> 
+<% @hour = Hour.find_by(id: @reservation.hour_id)
+<%= link_to 'Back', hours_path %>

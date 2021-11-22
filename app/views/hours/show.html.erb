@@ -30,9 +30,9 @@
               <% seat = list_seats_sorted[i-1]%>
 
               <% if seat.occupied == "NO" %>
-                <td class="if_not_occupied"><%= link_to seat.number, { :controller => :hours, :action => :change_color, :seat_id => seat.id} %></td>
+                <td class="if_not_occupied"><%= seat.number %></td>
               <% else %> 
-                <td class="if_occupied"><%= link_to seat.number, { :controller => :hours, :action => :change_color, :seat_id => seat.id} %></td>
+                <td class="if_occupied"><%=seat.number %></td>
               <% end %>
 
             <% end %>

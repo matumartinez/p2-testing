@@ -60,9 +60,6 @@ class ReservationsController < ApplicationController
       counter += 1
     end
 
-
-    puts 'AQUI VIENE hour_id:'
-    puts "#{@seats}"
     @reservation = Reservation.new(reservation_params)
 
     respond_to do |format|
