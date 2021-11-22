@@ -2,6 +2,8 @@
 
 <h1>Seats</h1>
 <h3> Room: <%= @room.id %> </h3>
+<%= puts "AQUI VIENE" %>
+<%= puts "#{@hour.id}" %>
 <h3> Movie: <%= @movie.title %> </h3>
 <h3> Time: <%= @hour.hourinterval %> </h3>
 <div class = "blocks_of_columns">
@@ -50,4 +52,9 @@
   </div>
 </div>
 <div class="corridor"> <b>Corridor</b> </div>
+</div>
+
+</br>
+<div>
+<%= link_to "Create Reservation", new_reservation_path( :controller => :reservation, :hour_id => @hour.id) %>
 </div>

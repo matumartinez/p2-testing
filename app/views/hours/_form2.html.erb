@@ -1,15 +1,6 @@
-<%= form_with(model: reservation, local: true) do |form| %>
-  <% if reservation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
 
-      <ul>
-      <% reservation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_with(model: reservation, local: true) do |form| %>
+  
 
   <div class = "field">
         <%= form.label :Row%>
@@ -78,25 +69,19 @@
     <label><%= form.check_box :seat_12 %> Seat 12 </label>
   </div>
 
-  <div class = "field">
-        <%= form.text_field :hour_id, value: @hour.id, type: :hidden%>
+  <div class="field">
+    <%= form.label :hour_id %>
+    <%= form.number_field :hour_id %>
   </div>
 
-  <div class = "field">
-        <%= form.text_field :movie_id, value: @movie.id, type: :hidden%>
+  <div class="field">
+    <%= form.label :movie_id %>
+    <%= form.number_field :movie_id %>
   </div>
 
-  <div class = "field">
-        <%= form.text_field :room_id, value: @room.id, type: :hidden%>
-  </div>
-
-  <% @string_id_seats = "" %>
-  <% @list_seats_sorted.each do |seat| %>
-  <%  @string_id_seats = @string_id_seats + seat.id.to_s + ' ' %>
-  <% end %>
-
-  <div class = "field">
-        <%= form.text_field :string_id_seats, value: @string_id_seats, type: :hidden%>
+  <div class="field">
+    <%= form.label :room_id %>
+    <%= form.number_field :room_id %>
   </div>
 
   <div class="actions">
