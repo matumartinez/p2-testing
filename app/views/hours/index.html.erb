@@ -4,13 +4,15 @@
 <div class="structure_of_movies_in_room">
 <% @movies.each do |movie| %>
   <div class="movies_in_room">
-    <% hour = Hour.find_by(movie_id: movie.id) %>
+    <% hour = Hour.find_by(movie_id: movie.id, room_id: @room.id) %>
     <h2 class="title_movie"><%=hour.hourinterval%> </h2>
     <img src='<%=movie.image%>' class="image">
     <h3 class="title_movie"> <%= link_to movie.title, hour %> </h3>
   </div>
 <% end %>
 </div>
+</br>
+<%= link_to 'Back to main page', root_path %>
 
 
 

@@ -2,34 +2,20 @@
 
 <h1>Reservations</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Seats</th>
-      <th>Row</th>
-      <th>Hour</th>
-      <th>Movie</th>
-      <th>Room</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @reservations.each do |reservation| %>
-      <tr>
-        <td>Click on show to see the seats</td>
-        <td><%= reservation.row %></td>
-        <td><%= reservation.hour_id %></td>
-        <td><%= reservation.movie_id %></td>
-        <td><%= reservation.room_id %></td>
-        <td><%= link_to 'Show', reservation %></td>
-        <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
-        <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class = "structure_of_index_of_movies">
+<% @reservations.each do |reservation| %>
+  <div class="movies_in_index_of_movies">
+  <h2 class="title_movie"> Reservation number: <%=reservation.id%> </h2>
+  <h3> Room: <%=reservation.room_id%> </h3>
+  <% movie = Movie.find_by(id: reservation.movie_id) %>
+  <h3> Movie: <%=movie.title%> </h3>
+  <% hour = Hour.find_by(id: reservation.hour_id) %>
+  <h3> Schedule: <%=hour.hourinterval%> </h3>
+  <%= link_to 'Details', reservation_path(reservation) %>
+  </div>
+<% end %>
+</div>
 
 <br>
 
-<%= link_to 'New Reservation', new_reservation_path %>
+<%= link_to 'Back to main page', root_path %>
