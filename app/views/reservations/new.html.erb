@@ -1,3 +1,5 @@
+<h1>New Reservation</h1>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Seats</h1>
@@ -14,7 +16,7 @@
         </tr>
       </thead>
 
-      <% list_seats_sorted = sort_list(@seats) %>
+      <% @list_seats_sorted = sort_list(@seats) %>
       <% letters = ['A', 'B', 'C', 'D'] %>
       <% counter = 0 %>
 
@@ -25,12 +27,12 @@
             <td> <%= letters[counter] %> </td>
 
             <% (n..n+11).step(1) do |i| %>
-              <% seat = list_seats_sorted[i-1]%>
+              <% seat = @list_seats_sorted[i-1]%>
 
               <% if seat.occupied == "NO" %>
                 <td class="if_not_occupied"><%= seat.number %></td>
               <% else %> 
-                <td class="if_occupied"><%=seat.number %></td>
+                <td class="if_occupied"><%= seat.number%></td>
               <% end %>
 
             <% end %>
@@ -51,10 +53,9 @@
 </div>
 <div class="corridor"> <b>Corridor</b> </div>
 </div>
+</br>
+
+<%= render 'form', reservation: @reservation %>
 
 </br>
-<div>
-<%= link_to "Create Reservation", new_reservation_path( :controller => :reservation, :hour_id => @hour.id) %> |
-<a href="/hours/#{@hour.id}">Back to room <%="#{@room.id}"%> </a> |
 <%= link_to 'Back to main page', root_path %>
-</div>

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Seats</h1>
+<h1>Reservation number <%= @reservation.id %></h1>
 <h3> Room: <%= @room.id %> </h3>
 <h3> Movie: <%= @movie.title %> </h3>
 <h3> Time: <%= @hour.hourinterval %> </h3>
@@ -30,7 +30,7 @@
               <% if seat.occupied == "NO" %>
                 <td class="if_not_occupied"><%= seat.number %></td>
               <% else %> 
-                <td class="if_occupied"><%=seat.number %></td>
+                <td class="if_occupied"><%= seat.number %></td>
               <% end %>
 
             <% end %>
@@ -52,9 +52,52 @@
 <div class="corridor"> <b>Corridor</b> </div>
 </div>
 
-</br>
-<div>
-<%= link_to "Create Reservation", new_reservation_path( :controller => :reservation, :hour_id => @hour.id) %> |
-<a href="/hours/#{@hour.id}">Back to room <%="#{@room.id}"%> </a> |
+<p>
+  <strong>Row:</strong>
+  <%= @reservation.row %>
+</p>
+
+<p>
+  <strong>Reserved seats:</strong>
+  <% if @reservation.seat_1 == 1 %>
+  <%= 'Seat 1' %>
+  <% end %>
+  <% if @reservation.seat_2 == 1 %>
+  <%= 'Seat 2' %>
+  <% end %>
+  <% if @reservation.seat_3 == 1 %>
+  <%= 'Seat 3' %>
+  <% end %>
+  <% if @reservation.seat_4 == 1 %>
+  <%= 'Seat 4' %>
+  <% end %>
+  <% if @reservation.seat_5 == 1 %>
+  <%= 'Seat 5' %>
+  <% end %> 
+  <% if @reservation.seat_6 == 1 %>
+  <%= 'Seat 6' %>
+  <% end %> 
+  <% if @reservation.seat_7 == 1 %>
+  <%= 'Seat 7' %>
+  <% end %>
+  <% if @reservation.seat_8 == 1 %>
+  <%= 'Seat 8' %>
+  <% end %>
+  <% if @reservation.seat_9 == 1 %>
+  <%= 'Seat 9' %>
+  <% end %>
+  <% if @reservation.seat_10 == 1 %>
+  <%= 'Seat 10' %>
+  <% end %>
+  <% if @reservation.seat_11 == 1 %>
+  <%= 'Seat 11' %>
+  <% end %> 
+  <% if @reservation.seat_12 == 1 %>
+  <%= 'Seat 12' %>
+  <% end %> 
+</p>
+
+
+<%= link_to 'Back to reservations', reservations_path %> |
+<%= link_to 'Back to room', room_hours_path(@room) %> |
 <%= link_to 'Back to main page', root_path %>
-</div>
