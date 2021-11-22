@@ -56,8 +56,6 @@ room7.hours.create(hourinterval: 'Afternoon 19:00 - 21:00', id: 20, movie_id: 5)
 room7.hours.create(hourinterval: 'Night 21:00 - 23:00', id: 21, movie_id: 8)
 room8 = Room.create(name: 'Room 8', id: 8)
 room8.hours.create(hourinterval: 'Matinee 17:00 - 19:00', id: 22, movie_id: 7)
-room8.hours.create(hourinterval: 'Afternoon 19:00 - 21:00', id: 23, movie_id: 9)
-room8.hours.create(hourinterval: 'Night 21:00 - 23:00', id: 24, movie_id: 2)
 
 #Creación de asientos por sala
 4.times do |j|
@@ -156,10 +154,6 @@ end
         hour = Hour.find_by(id: 22)
         hour.seats.create(number: (i+1).to_s, room_id: 8, occupied: "NO")
 
-        hour = Hour.find_by(id: 23)
-        hour.seats.create(number: (i+1).to_s, room_id: 8, occupied: "NO")
-
-        hour = Hour.find_by(id: 24)
-        hour.seats.create(number: (i+1).to_s, room_id: 8, occupied: "NO")
+        
     end
 end

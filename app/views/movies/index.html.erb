@@ -2,6 +2,10 @@
 
 <h1>Movies</h1>
 
+<h4><%= link_to "Add new movie", new_movie_path %></h4> 
+<h4><%= link_to 'Back to main page', root_path %></h4>  
+</br>
+
 <div class = "structure_of_index_of_movies">
 <% @movies.each do |movie| %>
   <div class="movies_in_index_of_movies">
