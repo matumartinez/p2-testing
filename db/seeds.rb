@@ -10,6 +10,7 @@ Room.destroy_all
 Hour.destroy_all
 Seat.destroy_all
 Movie.destroy_all
+Reservation.destroy_all
 
 
 # CREACIÓN DE PELÍCULAS
