@@ -9,6 +9,16 @@ class ReservationsController < ApplicationController
 
   # GET /reservations/1 or /reservations/1.json
   def show
+    @reservation = Reservation.find_by(id: params[:id])
+    id_hour = @reservation.hour_id
+    @hour = Hour.find_by(id: id_hour)
+    @seats = @hour.seats
+    @seats
+    id_movie = @hour.movie_id
+    @movie = Movie.find_by(id: id_movie)
+    @movie
+    id_room = @hour.room_id
+    @room = Room.find_by(id: id_room)
   end
 
   # GET /reservations/new
