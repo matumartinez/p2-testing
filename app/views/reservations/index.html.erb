@@ -2,6 +2,10 @@
 
 <h1>Reservations</h1>
 
+<% if @reservations.empty? %>
+<h3> No reservations yet </h3>
+<% end %>
+
 <div class = "structure_of_index_of_movies">
 <% @reservations.each do |reservation| %>
   <div class="movies_in_index_of_movies">
