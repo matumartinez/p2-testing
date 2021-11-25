@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Movies in room <%= @room.id %></h1>
+<% if @movies.empty? %>
+<h3> No movies yet </h3>
+<% end %>
 <div class="structure_of_movies_in_room">
 <% @movies.each do |movie| %>
   <div class="movies_in_room">

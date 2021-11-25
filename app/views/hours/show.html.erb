@@ -55,6 +55,7 @@
 </br>
 <div>
 <%= link_to "Create Reservation", new_reservation_path( :controller => :reservation, :hour_id => @hour.id) %> |
-<a href="/hours/#{@hour.id}">Back to room <%="#{@room.id}"%> </a> |
+
+<%= link_to 'Back to room ' + @room.id.to_s, room_hours_path(@room) %> |
 <%= link_to 'Back to main page', root_path %>
 </div>
