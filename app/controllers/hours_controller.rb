@@ -4,8 +4,13 @@ class HoursController < ApplicationController
 
   # GET /hours or /hours.json
   def index
-    @hour = Hour.find_by(room_id: params[:room_id]) if params[:room_id].present?
-    @room = @hour.room
+    # @hour = Hour.find_by(room_id: params[:room_id]) if params[:room_id].present?
+    # puts '---------------------------------'
+    # puts @hour.id
+    # puts @hour.room_id
+    # puts @hour.movie_id
+    # @room = @hour.room
+    @room = Room.find_by(id: params[:room_id]) if params[:room_id].present?
     @hours = @room.hours
     @hours
     @movies = []
